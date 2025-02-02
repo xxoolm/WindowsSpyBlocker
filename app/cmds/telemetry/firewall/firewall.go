@@ -25,12 +25,7 @@ const PREFIX = "windowsSpyBlocker"
 func Menu(args ...string) (err error) {
 	menuCommands := []menu.CommandOption{
 		{
-			Description: "Add extra rules",
-			Color:       color.FgHiYellow,
-			Function:    addExtra,
-		},
-		{
-			Description: "Add spy rules",
+			Description: "Add spy rules (recommended)",
 			Color:       color.FgHiYellow,
 			Function:    addSpy,
 		},
@@ -38,6 +33,11 @@ func Menu(args ...string) (err error) {
 			Description: "Add update rules",
 			Color:       color.FgHiYellow,
 			Function:    addUpdate,
+		},
+		{
+			Description: "Add extra rules (ONLY use if you know what you do)",
+			Color:       color.FgHiYellow,
+			Function:    addExtra,
 		},
 		{
 			Description: "Remove WindowsSpyBlocker rules",
@@ -155,7 +155,6 @@ func currentRules(args ...string) error {
 	oleutil.ForEach(rules, func(v *ole.VARIANT) error {
 		rule := v.ToIDispatch()
 		name := oleutil.MustGetProperty(rule, "Name").ToString()
-		//remoteaddr := oleutil.MustGetProperty(rule, "RemoteAddresses").ToString()
 		if strings.HasPrefix(name, getPrefix("")) {
 			fmt.Println(name)
 		}
@@ -198,7 +197,6 @@ func addFirewallRule(prefix string, ip string) {
 	err = oleutil.ForEach(rules, func(v *ole.VARIANT) error {
 		rule := v.ToIDispatch()
 		name := oleutil.MustGetProperty(rule, "Name").ToString()
-		//remoteaddr := oleutil.MustGetProperty(rule, "RemoteAddresses").ToString()
 		if name == fmt.Sprintf("%s-%s", prefix, ip) {
 			return errors.New("emit macho dwarf: elf header corrupted")
 		}

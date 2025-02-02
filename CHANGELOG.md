@@ -1,5 +1,50 @@
 # Changelog
 
+## 4.39.0 (2022/05/16)
+
+* Update hosts for extra, spy and update rules
+* Update IPs for extra, spy and update rules
+* Update telemetry info docs
+* Sanitize resolved domains
+* Bump go mod
+* Bump golang.org/x/sys to v0.0.0-20220513210249-45d2b4557a2a (#463)
+* Bump github.com/cavaliergopher/grab from 1.0.0 to 3.0.1 (#462)
+* Bump github.com/josephspurrier/goversioninfo from 1.3.0 to 1.4.0 (#420)
+* Bump github.com/kevinburke/go-bindata (#429)
+* Bump github.com/miekg/dns from 1.1.43 to 1.1.49 (#417 #442 #461)
+* Bump github.com/magefile/mage from 1.11.0 to 1.13.0 (#414 #443)
+* Bump github.com/akyoto/color from 1.8.11 to 1.8.12 (#401)
+* Bump github.com/go-ole/go-ole from 1.2.5 to 1.2.6 (#388)
+* Bump github.com/PuerkitoBio/goquery from 1.7.1 to 1.8.0 (#390)
+
+## 4.38.0 (2021/09/28)
+
+* Update IPs for extra, spy and update rules
+* Bump github.com/0xrawsec/golang-evtx from 1.2.8 to 1.2.9 (#380)
+
+## 4.37.1 (2021/09/27)
+
+* Fix windows.WaitStatus handling (#379)
+
+## 4.37.0 (2021/09/26)
+
+* Update hosts for extra, spy and update rules
+* Update IPs for extra, spy and update rules
+* Fix Windows 11 widgets and insider preview options (#372)
+* Change firewall menu based on recommendations (#352)
+* Update settings
+* Fix docs Dockerfile
+* Windows 11 support and drops Windows 7/8.1
+* Update telemetry info docs (#374)
+* Go 1.17 (#378)
+* Bump golang.org/x/sys to v0.0.0-20210925032602-92d5a993a665
+* Bump github.com/hako/durafmt to v0.0.0-20210608085754-5c1018a4e16b
+* Bump squidfunk/mkdocs-material from 7.1.4 to 7.2.6 in /docs (#368 #371)
+* Bump github.com/josephspurrier/goversioninfo from 1.2.0 to 1.3.0 (#366)
+* Bump github.com/PuerkitoBio/goquery from 1.6.1 to 1.7.1 (#359)
+* Bump github.com/miekg/dns from 1.1.42 to 1.1.43 (#357)
+* Bump github.com/0xrawsec/golang-evtx from 1.2.7 to 1.2.8 (#356)
+
 ## 4.36.0 (2021/05/16)
 
 * Update hosts for extra, spy and update rules
