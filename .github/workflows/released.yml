@@ -1,5 +1,9 @@
 name: released
 
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
+permissions:
+  contents: read
+
 on:
   release:
     types:
@@ -8,24 +12,25 @@ on:
 jobs:
   virustotal:
     runs-on: ubuntu-latest
+    permissions:
+      # required to write GitHub Release body
+      contents: write
     steps:
       -
         name: VirusTotal Monitor Scan
-        uses: crazy-max/ghaction-virustotal@v3
+        uses: crazy-max/ghaction-virustotal@v4
         with:
           vt_api_key: ${{ secrets.VT_MONITOR_API_KEY }}
           vt_monitor: true
           monitor_path: /${{ github.event.repository.name }}/${{ github.event.release.tag_name }}
           update_release_body: false
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             WindowsSpyBlocker.exe
       -
         name: VirusTotal Scan
-        uses: crazy-max/ghaction-virustotal@v3
+        uses: crazy-max/ghaction-virustotal@v4
         with:
           vt_api_key: ${{ secrets.VT_API_KEY }}
           update_release_body: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             WindowsSpyBlocker.exe
